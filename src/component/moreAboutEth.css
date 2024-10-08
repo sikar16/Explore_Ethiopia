@@ -1,0 +1,142 @@
+.more-about-eth {
+    padding: 40px;
+    border-radius: 12px;
+    transition: background 0.3s;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: fit-content;
+    position: relative; 
+    background-color: rgba(255, 255, 255, 0.4); 
+
+}
+
+.more-about-eth:hover {
+}
+
+.country-name {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+}
+
+.www{
+        padding: 20px; 
+        max-height: 350px; 
+        overflow: hidden;  
+}
+
+.slider-continer {
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+   
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    max-width: 500px;
+    border-radius: 20px;
+}
+
+.slider-item {
+    position: absolute;
+    width: 250px; /* Set a fixed width */
+    height: 280px; /* Set a fixed height */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out, left 0.5s ease-in-out;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.slider-item.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 6px; 
+    border-radius: 10px;
+    font-size: 0.7rem; 
+    text-align: center;
+    width: calc(100% - 20px); 
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navigation button {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 15px; /* Increased padding */
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s, transform 0.3s; /* Added transform transition */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navigation button:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+@media (max-width: 768px) {
+    .slider-item {
+        width: 150px;
+        height: 200px; /* Adjusted height for smaller screens */
+    }
+
+    .overlay {
+        font-size: 1rem; /* Adjusted font size for smaller screens */
+        padding: 5px 10px; /* Adjusted padding */
+    }
+}
+
+
+.destination-slider {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .slide-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .destination-card {
+    width: 48%; /* Adjust width to fit two cards */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .destination-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .read-more:hover {
+    text-decoration: underline;
+  }

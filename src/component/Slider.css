@@ -16,6 +16,7 @@ body, html {
 }
 
 .background-image {
+    background-image: url(../assets/2022-06-26.jpg);
     position: absolute;
     top: 0;
     left: 0;
@@ -23,7 +24,7 @@ body, html {
     bottom: 0;
     background-size: cover;
     background-position: center;
-    opacity: 0.7; /* Adjust opacity here */
+    opacity: 0.75; /* Adjust opacity here */
     z-index: 1; /* Keep background behind other content */
     transition: background-image 1s ease-in-out;
 }
@@ -49,26 +50,34 @@ body, html {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
     color: #fff;
     padding: 20px;
     position: relative; /* Ensure it is above the background */
-    z-index: 2; /* Ensure it is above the background */
+    z-index: 1; /* Ensure it is above the background */
 }
 
 .description {
     max-width: 400px;
-    text-align: center;
+    margin-left: 4%;
 }
 
 .main-title {
     font-size: 3rem;
-    font-weight: bold;
     margin-bottom: 10px;
+    line-height: 1;
+
+}
+.name{
+    margin-top: 4%;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight:bolder;
+    line-height: 1;
+
 }
 
 .main-description {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 }
 
 .right-section {

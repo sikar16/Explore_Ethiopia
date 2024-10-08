@@ -5,7 +5,8 @@ import {
 } from "react-router-dom";
 import Home from "../feature/Home";
 import Aboutus from "../feature/AboutUs";
-import Sliders from "../feature/Slider";
+import Sliders from "../component/Slider";
+import MoreAboutEth from "../component/MoreAboutEth";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -13,7 +14,9 @@ export const router = createBrowserRouter(
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
       <Route path="/about_us" element={<Aboutus />} />
-      <Route path="/slider" element={<Sliders />} />
+      <Route path="/hero" element={<Sliders />} />
+      <Route path="/eth" element={<MoreAboutEth />} />
+
     </>
   )
 );
