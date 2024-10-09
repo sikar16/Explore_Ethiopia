@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/component/home.tsx","./src/routes/index.tsx"],"version":"5.6.2"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/component/detailes.tsx","./src/component/ethiopia.tsx","./src/component/footer.tsx","./src/component/header.tsx","./src/component/hero.tsx","./src/component/hero1.tsx","./src/component/imagegallery.tsx","./src/component/moreabouteth.tsx","./src/component/slider.tsx","./src/feature/aboutus.tsx","./src/feature/home.tsx","./src/routes/index.tsx"],"version":"5.6.2"}

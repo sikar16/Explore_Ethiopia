@@ -1,56 +1,45 @@
-import React, { useState } from 'react';
-import axum from "../assets/axum.webp";
-import gonder from "../assets/gonder3.webp";
-import Lightbox from 'react-image-lightbox'; // Make sure to install react-image-lightbox
+import React from 'react';
+import woman from "../assets/woman.webp";
+import man from "../assets/man.jpg";
 import 'react-image-lightbox/style.css'; // Import the lightbox styles
 
-const images = [
-    {
-        src: axum,
-        alt: "Scenic view of Axum"
-    },
-    {
-        src: gonder,
-        alt: "Beautiful landscape of Gonder"
-    }
-];
-
 const ImageGallery: React.FC = () => {
-
-
     return (
-        <div className=' bg-gradient-to-r from-[#9cbad9]  to-[#b9c8dc]'>
-
+        <div className='bg-gradient-to-r from-[#9cbad9] to-[#b9c8dc'>
             <div className='container mx-auto py-12 md:flex justify-around gap-7 px-[3%]'>
                 <div className='relative flex justify-center'>
                     <div
                         style={{ ...styles.imageContainer, transform: 'rotate(-5deg)' }}
                     >
-                        <img src={axum} alt="Axum" style={styles.image} />
+                        <img src={woman} alt="Axum" style={styles.image} />
                     </div>
                     <div
                         style={{ ...styles.imageContainer, transform: 'rotate(5deg)', zIndex: 1 }}
-
                     >
-                        <img src={gonder} alt="Gonder" style={styles.image} />
+                        <img src={man} alt="Gonder" style={styles.image} />
                     </div>
                 </div>
                 <div className='flex flex-col justify-center mt-6'>
-                    <h2 className=' font-bold mb-4 text-gray-800 text-[26px]'>Explore Our Beautiful Locations</h2>
-                    <p className='text-gray-600  '>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem iure iusto dolor consequatur, amet iste aliquam culpa minus, dolore, quia corporis! Cupiditate tempora ratione dolor quod itaque iusto non qui!
+                    <h2 className='font-bold mb-4 text-gray-800 text-[26px]'>Explore Our Beautiful Locations</h2>
+                    <p className='text-gray-600'>
+                        Ethiopia is a land of diverse landscapes, rich history, and vibrant cultures. From the majestic Simien Mountains to the bustling streets of Addis Ababa, Ethiopia offers travelers a unique blend of natural beauty and cultural heritage. Our country is home to ancient civilizations, stunning churches carved from rock, and wildlife that can only be found in this region. With its hospitable people and rich traditions, every corner of Ethiopia tells a story waiting to be discovered.
+
                         <br /><br />
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem iure iusto dolor consequatur, amet iste aliquam culpa minus, dolore, quia corporis! Cupiditate tempora ratione dolor quod itaque iusto non qui!
+
+                        At [Your Travel Company Name], we are passionate about showcasing the beauty and diversity of Ethiopia. Our mission is to provide travelers with unforgettable experiences, whether you're hiking in the breathtaking highlands, exploring historic sites, or indulging in the local cuisine. We pride ourselves on our personalized service, ensuring that each journey is tailored to meet your interests and preferences.
+
                         <br /><br />
+
+                        Join us in exploring the enchanting landscapes, experiencing the warmth of Ethiopian hospitality, and creating memories that will last a lifetime. Whether you're seeking adventure, relaxation, or cultural immersion, [Your Travel Company Name] is here to guide you every step of the way. Let us help you uncover the wonders of Ethiopia, a destination like no other!
                     </p>
                 </div>
-
             </div>
         </div>
     );
 };
 
-const styles = {
+// Define styles using TypeScript
+const styles: { [key: string]: React.CSSProperties } = {
     imageContainer: {
         width: '220px', // Adjusted width for better overlap
         height: '300px', // Increased height for a better aspect ratio
