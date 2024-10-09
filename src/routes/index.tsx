@@ -5,8 +5,9 @@ import {
 } from "react-router-dom";
 import Home from "../feature/Home";
 import Aboutus from "../feature/AboutUs";
-import Sliders from "../component/Slider";
-import MoreAboutEth from "../component/MoreAboutEth";
+import Hero from "../component/Hero";
+import Hero1 from "../component/Hero1";
+
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -14,8 +15,8 @@ export const router = createBrowserRouter(
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
       <Route path="/about_us" element={<Aboutus />} />
-      <Route path="/hero" element={<Sliders />} />
-      <Route path="/eth" element={<MoreAboutEth />} />
+      <Route path="/hero" element={<Hero1 />} />
+
 
     </>
   )

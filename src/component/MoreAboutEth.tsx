@@ -41,7 +41,7 @@ function MoreAboutEth() {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 6,
+        slidesToShow: 5.5,
         slidesToScroll: 1,
         responsive: [
             {
@@ -75,47 +75,46 @@ function MoreAboutEth() {
 
     return (
         <div className="more-about-eth h-[950px]" style={{
-            backgroundImage: `url(${Ethflag})`,
+            // backgroundImage: `url(${Ethflag})`,
 
         }}>
-            <div className=" ">
-                <p className="country-name px-4">Ethiopia</p>
-                <div className="flex justify-between www ">
-                    <div className="text-[18px] me-[5%] text-justify ">
-                        Ethiopia is a diverse country with over 80 ethnic groups, each with unique languages and traditions. Amharic is the official language, and Ethiopian Orthodox Christianity and Islam are prominent religions. The culture is known for colorful attire, vibrant music, and dishes like injera. Ethiopia follows its own calendar and has a deep sense of community and heritage.
+            <p className="country-name px-4">Ethiopia</p>
+
+            <div className="flex justify-between www ">
+                <div className="text-[18px] me-[5%] text-justify ">
+                    Ethiopia is a diverse country with over 80 ethnic groups, each with unique languages and traditions. Amharic is the official language, and Ethiopian Orthodox Christianity and Islam are prominent religions. The culture is known for colorful attire, vibrant music, and dishes like injera. Ethiopia follows its own calendar and has a deep sense of community and heritage.
+                </div>
+                <div className="slider-wrapper ">
+                    <div className="slider-container">
+                        {items.map((item, index) => {
+                            const position = index - currentIndex;
+                            const isVisible = position >= 0 && position < items.length - 1;
+                            return (
+                                <div
+                                    key={item.id}
+                                    className={`slider-item ${isVisible ? "visible" : ""}`}
+                                    style={{
+                                        backgroundImage: `url(${item.image})`,
+                                        left: `${position * 50}px`,
+                                        zIndex: 100 - index,
+                                    }}
+                                >
+                                    {index === currentIndex && (
+                                        <div className="overlay px-4">
+                                            <h2>{item.name}</h2>
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
                     </div>
-                    <div className="slider-wrapper ">
-                        <div className="slider-container">
-                            {items.map((item, index) => {
-                                const position = index - currentIndex;
-                                const isVisible = position >= 0 && position < items.length - 1;
-                                return (
-                                    <div
-                                        key={item.id}
-                                        className={`slider-item ${isVisible ? "visible" : ""}`}
-                                        style={{
-                                            backgroundImage: `url(${item.image})`,
-                                            left: `${position * 50}px`,
-                                            zIndex: 100 - index,
-                                        }}
-                                    >
-                                        {index === currentIndex && (
-                                            <div className="overlay">
-                                                <h2>{item.name}</h2>
-                                            </div>
-                                        )}
-                                    </div>
-                                );
-                            })}
-                        </div>
-                        <div className="navigation">
-                            <button onClick={handlePrev} aria-label="Previous Image">
+                    <div className="navigation">
+                        {/* <button onClick={handlePrev} aria-label="Previous Image">
                                 <FontAwesomeIcon icon={faArrowLeft} />
                             </button>
                             <button onClick={handleNext} aria-label="Next Image">
                                 <FontAwesomeIcon icon={faArrowRight} />
-                            </button>
-                        </div>
+                            </button> */}
                     </div>
                 </div>
             </div>

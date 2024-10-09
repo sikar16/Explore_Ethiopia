@@ -1,22 +1,23 @@
+import Detailes from "../component/Detailes"
 import Ethiopia from "../component/Ethiopia"
 import Footer from "../component/Footer"
-import Header from "../component/Header"
-import Hero from "../component/Hero"
-import MoreAboutEth from "../component/MoreAboutEth"
 import Slider from "../component/Slider"
 
 function Home() {
     return (
         <div>
             <div className="relative h-screen">
-                <div className="">
+                <div className="h-screen">
                     <Slider />
                 </div>
                 <div>
-                    <MoreAboutEth />
+                    <Detailes />
                 </div>
                 <div>
-                    {/* <Footer /> */}
+                    <Ethiopia />
+                </div>
+                <div>
+                    <Footer />
                 </div>
 
             </div>

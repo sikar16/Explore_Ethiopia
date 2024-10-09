@@ -5,18 +5,17 @@ import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Header from "../component/Header";
 import lalibela from "../assets/istockphoto-697529054-612x612.jpg";
 import axum from "../assets/axum.webp";
-import gonder from "../assets/Dankile.jpg";
+import gonder from "../assets/gonder3.webp";
 import dankile from "../assets/Dankile.jpg";
-import riftvally from "../assets/2022-06-26.jpg";
-import semenMou from "../assets/2023-06-30.jpg";
-import axumtison from "../assets/istockphoto-1097499146-612x612.jpg";
-import debreBrihan from "../assets/licensed-image (3).jpeg";
+import riftvally from "../assets/riftvally.webp";
+import semenMou from "../assets/semenmountavif.avif";
+import axumtison from "../assets/axumtsion.webp";
+import debreBrihan from "../assets/Debre_Berhan.webp";
 import blueNile from "../assets/2022-06-26.jpg";
-import tana from "../assets/2023-02-19.jpg";
+import tana from "../assets/tana.webp";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
-
-const Slider = () => {
+function Hero1() {
     const [items] = useState([
         { id: 1, image: lalibela, name: "Lalibela", des: "Lalibela (Amharic: ላሊበላ, romanized: Lalibäla) is a town in the Amhara Region of Ethiopia. Located in the Lasta district and North Wollo Zone." },
         { id: 2, image: axum, name: "Gonder", des: "Gonder (Amharic: ጎንደር, Gonder[a] or Gondär;[b] formerly ጐንደር, Gʷandar or Gʷender), is a city and woreda in Ethiopia. Located in the North Gondar Zone of the Amhara Region." },
@@ -29,8 +28,8 @@ const Slider = () => {
         { id: 9, image: blueNile, name: "Blue Nile River", des: "The Blue Nile[note 1] is a river originating at Lake Tana in Ethiopia. It travels for approximately 1,450 km (900 mi) through Ethiopia and Sudan" },
         { id: 10, image: tana, name: "Lake Tana", des: "Lake Tana (Amharic: ጣና ሐይቅ, romanized: T’ana ḥāyik’i; previously Tsana[1]) is the largest lake in Ethiopia and a source of the Blue Nile" }
     ]);
-
     const [currentIndex, setCurrentIndex] = useState(0);
+    const transitionRef = useRef(null);
 
     const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
@@ -48,29 +47,25 @@ const Slider = () => {
 
         return () => clearInterval(timer); // Cleanup on unmount
     }, []);
-
-
-
+    // useEffect(() => {
+    //     if (transitionRef.current) {
+    //         transitionRef.current.classList.add("fade-in");
+    //         setTimeout(() => {
+    //             transitionRef.current.classList.remove("fade-in");
+    //         }, 500); // Remove class after 500ms (duration of the transition)
+    //     }
+    // }, [currentIndex]);
     return (
         <>
-            <Header />
-            <hr className="text-black bg-black mx-[5%]" />
-            <div>
-
+            <div className="flex w-full h-full relative overflow-hidden">
                 <div
                     className="background-image "
-
-                    style={{
-                        backgroundImage: `url(${items[currentIndex].image})`,
-                    }}
-
                 >
+                    <Header />
                 </div>
-                <p className="main-title text-black text-[30px] sm:text-[40px] absolute  mx-[3%] sm:mx-[7%] lg:me-[0] lg:w-[400px]"> Let we explore country Ethiopia</p>
-                <div className="flex w-full relative overflow-hidden">
-
-                    <div className=" flex items-center text-white p-3 gap-5 relative z-1">
-                        <div className="ps-3 hidden lg:block">
+                <div className="flex">
+                    <div className=" flex items-center text-white p-3 relative z-1">
+                        <div className="">
                             <ul className="space-y-9">
                                 <li><FaFacebookF size={20} /></li>
                                 <li><FaInstagram size={20} /></li>
@@ -78,28 +73,24 @@ const Slider = () => {
                                 <li><FaYoutube size={20} /></li>
                             </ul>
                         </div>
-                        <div className=" bottom-0 mx-[5%] xl:mx-[0] mt-[200px] lg:mt-[14%] xl:mt-[14%]   lg:max-w-[400px]">
+                        <div className="description ">
+                            <h1 className="main-title">  Let we explore country Ethiopia </h1>
+                            <h1 className="main-title">   </h1>
                             <h1 className="name underline">{items[currentIndex].name}</h1>
                             <p className="main-description">{items[currentIndex].des}</p>
                         </div>
                     </div>
-                    <div className="right-section w-[40%] mt-[200px] lg:mt-[14%] xl:mt-[6%] hidden lg:block">
+                    <div className="right-section w-[40%] ">
                         <div className="overlay-carousel">
                             <div className="carousel-container">
                                 <div className="slide-container">
-                                    <div className="slide-container">
-                                        {items
-                                            .concat(items)
-                                            .slice(currentIndex, currentIndex + 3)
-                                            .map((item, index) => (
-                                                <div key={`${item.id}-${index}`} className="item" style={{ backgroundImage: `url(${item.image})` }}>
-                                                    <div className="item-overlay">
-                                                        <h2 className="item-title">{item.name}</h2>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                    </div>
-
+                                    {items.slice((currentIndex) % items.length, (currentIndex + 3) % items.length).map(item => (
+                                        <div key={item.id} className="item" style={{ backgroundImage: `url(${item.image})` }}>
+                                            <div className="item-overlay">
+                                                <h2 className="item-title">{item.name}</h2>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                                 <div className="button-container">
                                     <button className="prev" onClick={handlePrev}>
@@ -112,10 +103,10 @@ const Slider = () => {
                             </div>
                         </div>
                     </div>
-                </div >
+                </div>
             </div >
         </>
-    );
-};
+    )
+}
 
-export default Slider;
+export default Hero1
