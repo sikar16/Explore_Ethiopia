@@ -61,7 +61,7 @@ const Slider = () => {
                     className="background-image "
 
                     style={{
-                        backgroundImage: `url(${items[currentIndex].image})`,
+                        // backgroundImage: `url(${items[currentIndex].image})`,
                     }}
 
                 >
@@ -69,7 +69,7 @@ const Slider = () => {
                 <p className="main-title text-black text-[30px] sm:text-[40px] absolute  mx-[3%] sm:mx-[7%] lg:me-[0] lg:w-[400px]"> Let we explore country Ethiopia</p>
                 <div className="flex w-full relative overflow-hidden">
 
-                    <div className=" flex items-center text-white p-3 gap-5 relative z-1">
+                    <div className=" flex items-center text-black p-3 gap-5 relative z-1">
                         <div className="ps-3 hidden lg:block">
                             <ul className="space-y-9">
                                 <li><FaFacebookF size={20} /></li>
@@ -78,7 +78,7 @@ const Slider = () => {
                                 <li><FaYoutube size={20} /></li>
                             </ul>
                         </div>
-                        <div className=" bottom-0 mx-[5%] xl:mx-[0] mt-[200px] lg:mt-[14%] xl:mt-[14%]   lg:max-w-[400px]">
+                        <div className=" bottom-0 mx-[5%] xl:mx-[0] mt-[200px] lg:mt-[14%] xl:mt-[14%] text-black  lg:max-w-[400px]">
                             <h1 className="name underline">{items[currentIndex].name}</h1>
                             <p className="main-description">{items[currentIndex].des}</p>
                         </div>

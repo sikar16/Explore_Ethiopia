@@ -69,7 +69,6 @@ function Footer() {
                 </div>
 
                 {/* Horizontal Divider */}
-                <hr className=" border-gray-300 bg-[#292d32]" />
 
                 {/* Footer Bottom Section */}
 

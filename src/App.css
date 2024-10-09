@@ -40,3 +40,33 @@
 .read-the-docs {
   color: #888;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f4f8;
+  height: 100vh;
+  margin: 0;
+}
+.flex {
+  display: flex;
+  gap: 20px; /* Space between images */
+}
+.image-container {
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transform: rotate(-5deg); /* Slight rotation for effect */
+}
+.image-container:nth-child(2) {
+  transform: rotate(5deg); /* Slight rotation for second image */
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container */
+}
